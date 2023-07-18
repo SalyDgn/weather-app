@@ -4,13 +4,11 @@ import Forecast from "./Components/Forecast";
 import RegionImage from "./Components/RegionImage";
 
 function App() {
-  const { MongoClient } = require("mongodb");
-
   return (
-    <Container className="App my-5 text-light">
+    <div className="App my-5 mx-5 text-light">
       <RegionImage region="Thies"></RegionImage>
       <Forecast></Forecast>
-    </Container>
+    </div>
   );
 }
 

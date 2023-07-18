@@ -12,7 +12,7 @@ function RegionImage({ region }) {
 
   const img = regions[region];
 
-  return <Image src={img} fluid rounded className="img"></Image>;
+  return <div className="img"></div>;
 }
 
 export default RegionImage;

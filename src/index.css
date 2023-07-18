@@ -3,7 +3,10 @@ body {
 }
 
 .img{
-  /*width: 1080px;*/
-  /*height: 500px;*/
-  float: right;
+  background-image: url("./assets/img/Thies.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  border-radius: 2%;
+  background-position: center center;
 }
