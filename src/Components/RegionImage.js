@@ -10,6 +10,7 @@ import Tamba from "../assets/img/Tambacounda.webp";
 import SL from "../assets/img/SL.jfif";
 import Zig from "../assets/img/Zig.jfif";
 import Cap from "../assets/img/Cap.jpg";
+import Thies from "../assets/img/Thies.jpg";
 import { CiLocationOn } from "react-icons/ci";
 import { Stack } from "react-bootstrap";
 import Temp from "./Temp";
@@ -18,11 +19,12 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 function RegionImage({ region, weatherData, changeRegion }) {
-  const [value, setValue] = React.useState("Dakar/Yoff");
+  const [value, setValue] = React.useState("Dakar");
   const [inputValue, setInputValue] = React.useState("");
 
   const regions = {
-    "Dakar/Yoff": Dakar,
+    Thies: Thies,
+    Dakar: Dakar,
     Diourbel: Diourbel,
     Kaolack: Kaolack,
     "Saint-Louis": SL,
@@ -67,7 +69,8 @@ function RegionImage({ region, weatherData, changeRegion }) {
           />
         </div>
       </div>
-      <Temp />
+
+      <Temp weatherData={weatherData} />
       <div className="region">
         <CiLocationOn />
         {region}

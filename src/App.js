@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [region, setRegion] = useState("Dakar/Yoff");
+  const [region, setRegion] = useState("Dakar");
   const [weatherData, setWeatherData] = useState([]);
   const [predictions, setPredictions] = useState([]);
 
@@ -43,7 +43,6 @@ function App() {
       });
   }, [region]);
 
-  console.log(region);
   return (
     <div className="App my-5 mx-5 text-light">
       <RegionImage
