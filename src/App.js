@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [region, setRegion] = useState("Dakar");
+  const [region, setRegion] = useState("Dakar/Yoff");
   const [weatherData, setWeatherData] = useState([]);
 
   useEffect(() => {
@@ -23,11 +23,16 @@ function App() {
           error
         );
       });
-  }, []);
+  }, [region]);
 
+  console.log(region);
   return (
     <div className="App my-5 mx-5 text-light">
-      <RegionImage region={region} weatherData={weatherData}></RegionImage>
+      <RegionImage
+        changeRegion={(value) => setRegion(value)}
+        region={region}
+        weatherData={weatherData}
+      ></RegionImage>
       <Forecast></Forecast>
     </div>
   );
