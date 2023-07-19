@@ -6,7 +6,23 @@ body {
   background-image: url("./assets/img/Thies.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 350px;
-  border-radius: 2%;
+  height: 375px;
+  border-radius: 50px;
   background-position: center center;
+  filter: brightness(90%) blur(0.25px);
+}
+
+.region{
+  font-weight: 700;
+  font-size: 45px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.data-temp{
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  width: 100px;
+  height: 100px;
+  background-color: rgb(61, 27, 120);
+  padding-top: 37px;
+  padding-left: 15px;
 }
