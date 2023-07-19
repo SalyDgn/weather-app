@@ -6,6 +6,7 @@ mongoose.pluralize(null);
 const predictionsSchema = new Schema({
   timestamp: { type: String },
   temperature: { type: String },
+  region: { type: String },
 });
 
 const weatherSchema = new Schema({

@@ -1,5 +1,4 @@
 import React from "react";
-import Thies from "../assets/img/Thies.jpg";
 import Dakar from "../assets/img/Dakar.jpg";
 import Diourbel from "../assets/img/Diourbel.jpg";
 import Kaolack from "../assets/img/Kaolack.jpg";
@@ -23,7 +22,6 @@ function RegionImage({ region, weatherData, changeRegion }) {
   const [inputValue, setInputValue] = React.useState("");
 
   const regions = {
-    Thies: Thies,
     "Dakar/Yoff": Dakar,
     Diourbel: Diourbel,
     Kaolack: Kaolack,
@@ -47,6 +45,7 @@ function RegionImage({ region, weatherData, changeRegion }) {
         <div>
           <Autocomplete
             value={value}
+            size="small"
             onChange={(event, newValue) => {
               setValue(newValue);
               changeRegion(newValue);
@@ -59,12 +58,16 @@ function RegionImage({ region, weatherData, changeRegion }) {
             options={options}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label="Choose a region" />
+              <TextField
+                {...params}
+                style={{ backgroundColor: "white" }}
+                label="Choose a region"
+              />
             )}
           />
         </div>
       </div>
-
+      <Temp />
       <div className="region">
         <CiLocationOn />
         {region}

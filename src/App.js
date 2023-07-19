@@ -7,11 +7,12 @@ import axios from "axios";
 function App() {
   const [region, setRegion] = useState("Dakar/Yoff");
   const [weatherData, setWeatherData] = useState([]);
+  const [predictions, setPredictions] = useState([]);
 
   useEffect(() => {
     // Effectuer la requête GET
     axios
-      .get("http://localhost:4000/weather")
+      .get(`http://localhost:4000/weather/${region}`)
       .then((response) => {
         // Mettre à jour l'état avec les données récupérées
         setWeatherData(response.data);
@@ -20,6 +21,23 @@ function App() {
       .catch((error) => {
         console.error(
           "Erreur lors de la récupération des données climatiques",
+          error
+        );
+      });
+  }, [region]);
+
+  useEffect(() => {
+    // Effectuer la requête GET
+    axios
+      .get(`http://localhost:4000/predictions/${region}`)
+      .then((response) => {
+        // Mettre à jour l'état avec les données récupérées
+        setPredictions(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(
+          "Erreur lors de la récupération des données prediction",
           error
         );
       });
