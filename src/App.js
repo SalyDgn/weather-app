@@ -1,8 +1,10 @@
 import "./App.css";
 import Forecast from "./Components/Forecast";
 import RegionImage from "./Components/RegionImage";
+
 import { useState, useEffect } from "react";
 import axios from "axios";
+import HighLight from "./Components/HighLight";
 
 function App() {
   const [region, setRegion] = useState("Dakar");
@@ -29,6 +31,7 @@ function App() {
     <div className="App my-5 mx-5 text-light">
       <RegionImage region={region} weatherData={weatherData}></RegionImage>
       <Forecast></Forecast>
+      <HighLight weatherData={weatherData}></HighLight>
     </div>
   );
 }
