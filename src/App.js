@@ -9,11 +9,12 @@ import HighLight from "./Components/HighLight";
 function App() {
   const [region, setRegion] = useState("Dakar");
   const [weatherData, setWeatherData] = useState([]);
+  const [predictions, setPredictions] = useState([]);
 
   useEffect(() => {
     // Effectuer la requête GET
     axios
-      .get("http://localhost:4000/weather")
+      .get(`http://localhost:4000/weather/${region}`)
       .then((response) => {
         // Mettre à jour l'état avec les données récupérées
         setWeatherData(response.data);
@@ -25,11 +26,32 @@ function App() {
           error
         );
       });
-  }, []);
+  }, [region]);
+
+  useEffect(() => {
+    // Effectuer la requête GET
+    axios
+      .get(`http://localhost:4000/predictions/${region}`)
+      .then((response) => {
+        // Mettre à jour l'état avec les données récupérées
+        setPredictions(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(
+          "Erreur lors de la récupération des données prediction",
+          error
+        );
+      });
+  }, [region]);
 
   return (
     <div className="App my-5 mx-5 text-light">
-      <RegionImage region={region} weatherData={weatherData}></RegionImage>
+      <RegionImage
+        changeRegion={(value) => setRegion(value)}
+        region={region}
+        weatherData={weatherData}
+      ></RegionImage>
       <Forecast></Forecast>
       <HighLight weatherData={weatherData}></HighLight>
     </div>

@@ -1,5 +1,5 @@
 body {
-  background-color: #1a3261 !important;
+  background-color: rgb(9, 13, 38) !important;
 }
 
 .img{
@@ -16,13 +16,22 @@ body {
   font-weight: 700;
   font-size: 45px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-top: 142.5px;
+  padding-left:150px ;
 }
 
 .data-temp{
-  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  width: 100px;
-  height: 100px;
-  background-color: rgb(61, 27, 120);
-  padding-top: 37px;
+  border-radius: 0% 100% 100% 0% / 30% 48% 52% 70%;
+  position: absolute;
+  left: -50px;
+  top: 100px;
+  width: 175px;
+  height: 175px;
+  background: linear-gradient(to right, rgba(45, 36, 199, 0.5), rgba(6, 17, 116, 0.5));
   padding-left: 15px;
 }
+
+.temp{
+  font-size: 34px;
+}
+

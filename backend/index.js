@@ -15,7 +15,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const port = process.env.PORT || 4000;
-const region = "Kolda";
 
 const dbOptions = {
   useNewUrlParser: true,
@@ -23,10 +22,7 @@ const dbOptions = {
   family: 4,
 };
 mongoose
-  .connect(
-    `mongodb+srv://openweathermap:Ept2023@cluster0.fafwdse.mongodb.net/${region}?retryWrites=true&w=majority`,
-    dbOptions
-  )
+  .connect(process.env.DB_URI, dbOptions)
   .then(() => console.log("DB Connected"))
   .catch((err) => console.log(err));
 
