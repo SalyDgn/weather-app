@@ -19,7 +19,7 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 function RegionImage({ region, weatherData, changeRegion }) {
-  const [value, setValue] = React.useState("Dakar");
+  const [value, setValue] = React.useState("Thies");
   const [inputValue, setInputValue] = React.useState("");
 
   const regions = {

@@ -7,7 +7,7 @@ import axios from "axios";
 import HighLight from "./Components/HighLight";
 
 function App() {
-  const [region, setRegion] = useState("Dakar");
+  const [region, setRegion] = useState("Thies");
   const [weatherData, setWeatherData] = useState([]);
   const [predictions, setPredictions] = useState([]);
 
@@ -46,7 +46,7 @@ function App() {
   }, [region]);
 
   return (
-    <div className="App my-5 mx-5 text-light">
+    <div className="App my-3 mx-5 text-light">
       <RegionImage
         changeRegion={(value) => setRegion(value)}
         region={region}

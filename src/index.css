@@ -16,22 +16,74 @@ body {
   font-weight: 700;
   font-size: 45px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  padding-top: 142.5px;
-  padding-left:150px ;
+  position: absolute;
+  left : 130px;
+  top: 130px;
 }
 
 .data-temp{
-  border-radius: 0% 100% 100% 0% / 30% 48% 52% 70%;
-  position: absolute;
+  position: relative;
   left: -50px;
   top: 100px;
-  width: 175px;
-  height: 175px;
-  background: linear-gradient(to right, rgba(45, 36, 199, 0.5), rgba(6, 17, 116, 0.5));
+  width: 150px;
+  height: 165px;
+  padding-left: 15px;
+  background-color: #818CF8;
+  border-radius: 0 30% 25px 0;
+}
+
+.data-temp::before{
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: -50px;
+    height: 50px;
+    width: 25px;
+    left: 2px;
+    border-top-left-radius: 25px;
+    box-shadow: 0 -25px 0 0 #818CF8;
+}
+
+.tempt{
+  font-size: 40px;
+  padding-top: 80px;
   padding-left: 15px;
 }
 
-.temp{
-  font-size: 34px;
+.icone{
+  background-color: #4F46E5;
+  z-index: 2;
+  box-shadow: 0.5px 0.5px 0 0 #524bda;
+  width: 150px;
+  position: absolute;
+  left : 0px;
+  top: 0px;
+  height: 90px;
+  border-radius: 0 40px 40px 10px;
 }
 
+.icone::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: 90px;
+  left: 2px;
+  height: 50px;
+  width: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -25px 0 0 #4F46E5;
+  transform: rotate(180deg);
+}
+
+
+.icon{
+  width: 70px;
+  height: 60px;
+
+}
+
+.weather-icon{
+  padding-left: 30px;
+  font-weight: 400;
+  font-size: 20px;
+}
