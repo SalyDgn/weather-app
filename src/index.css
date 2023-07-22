@@ -6,10 +6,10 @@ body {
   background-image: url("./assets/img/Thies.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 375px;
+  height: 300px;
   border-radius: 50px;
   background-position: center center;
-  filter: brightness(90%) blur(0.25px);
+  filter: brightness(80%) blur(0.25px);
 }
 
 .region{
@@ -18,13 +18,13 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: absolute;
   left : 130px;
-  top: 130px;
+  top: 110px;
 }
 
 .data-temp{
   position: relative;
   left: -50px;
-  top: 100px;
+  top: 70px;
   width: 150px;
   height: 165px;
   padding-left: 15px;
@@ -86,4 +86,52 @@ body {
   padding-left: 30px;
   font-weight: 400;
   font-size: 20px;
+}
+
+.predict-card{
+  background-color: #272F59;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  padding-left: 25px;
+
+}
+
+.predict-time{
+  margin-top: 12px;
+}
+.predict-temp{
+  padding-top: 12px;
+  background-color: #818CF8;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  padding-left: 25px;
+}
+
+.data-card{
+  background-color: #121736;
+  padding-left: 50px;
+  border-radius: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #54596F;
+  height: 175px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.data{
+  background-color: #272F59 ;
+  height: 125px;
+  border-radius: 10px;
+}
+
+.numbers{
+  color: white;
+  font-size: 25px;
+}
+
+.hour{
+  font-size: 25px;
 }

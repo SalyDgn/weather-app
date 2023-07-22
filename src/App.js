@@ -4,7 +4,11 @@ import RegionImage from "./Components/RegionImage";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import HighLight from "./Components/HighLight";
+import DataCard from "./Components/DataCard";
+import { Stack } from "react-bootstrap";
+import Data from "./Components/Data";
+import LineChart from "./Components/LineChart";
+import GeographyChart from "./Components/GeographyChart";
 
 function App() {
   const [region, setRegion] = useState("Thies");
@@ -18,7 +22,6 @@ function App() {
       .then((response) => {
         // Mettre à jour l'état avec les données récupérées
         setWeatherData(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error(
@@ -34,8 +37,7 @@ function App() {
       .get(`http://localhost:4000/predictions/${region}`)
       .then((response) => {
         // Mettre à jour l'état avec les données récupérées
-        setPredictions(response.data);
-        console.log(response.data);
+        setPredictions(response.data.slice(-3));
       })
       .catch((error) => {
         console.error(
@@ -44,7 +46,8 @@ function App() {
         );
       });
   }, [region]);
-
+  console.log(predictions);
+  const pred = ["11", "12", "13"];
   return (
     <div className="App my-3 mx-5 text-light">
       <RegionImage
@@ -52,8 +55,27 @@ function App() {
         region={region}
         weatherData={weatherData}
       ></RegionImage>
-      <Forecast></Forecast>
-      <HighLight weatherData={weatherData}></HighLight>
+      <div className="row md-5" direction="horizontal">
+        <div className="col-2 mt-3 mr-5">
+          <Data weatherData={weatherData} />
+          <div className="mt-3" style={{ fontSize: "20px" }}>
+            3 Hours Forecast
+          </div>
+          {predictions.map((prediction) => (
+            <Forecast key={prediction.id} prediction={prediction} />
+          ))}
+        </div>
+        <DataCard
+          className="col ml-5 pr-5"
+          weatherData={weatherData}
+        ></DataCard>
+      </div>
+      <br />
+      <div className="row">
+        <div className="col" style={{ width: "500px", height: "500px" }}>
+          <LineChart weatherData={weatherData} />
+        </div>
+      </div>
     </div>
   );
 }

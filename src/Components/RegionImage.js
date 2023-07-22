@@ -1,5 +1,5 @@
 import React from "react";
-import Dakar from "../assets/img/Dakar.jpg";
+import Dakar from "../assets/img/Dakar2.avif";
 import Diourbel from "../assets/img/Diourbel.jpg";
 import Kaolack from "../assets/img/Kaolack.jpg";
 import Kedougou from "../assets/img/Kedougou.jpg";
@@ -10,9 +10,8 @@ import Tamba from "../assets/img/Tambacounda.webp";
 import SL from "../assets/img/SL.jfif";
 import Zig from "../assets/img/Zig.jfif";
 import Cap from "../assets/img/Cap.jpg";
-import Thies from "../assets/img/Thies.jpg";
+import Thies from "../assets/img/Thies2.jpg";
 import { CiLocationOn } from "react-icons/ci";
-import { Stack } from "react-bootstrap";
 import Temp from "./Temp";
 
 import TextField from "@mui/material/TextField";
@@ -60,11 +59,7 @@ function RegionImage({ region, weatherData, changeRegion }) {
             options={options}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField
-                {...params}
-                style={{ backgroundColor: "white" }}
-                label="Choose a region"
-              />
+              <TextField {...params} style={{ backgroundColor: "white" }} />
             )}
           />
         </div>
