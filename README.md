@@ -16,7 +16,8 @@ npm start
 
 # Screeshots
 
-![image](https://github.com/SalyDgn/weather-app/assets/86668140/c5e0c6a5-66a7-49e5-bab1-395e9515b08c)
-![image](https://github.com/SalyDgn/weather-app/assets/86668140/423ea6f1-69d2-42f2-a795-1bf85be029c6)
+![image](https://github.com/SalyDgn/weather-app/assets/86668140/5c009eec-debb-4032-be8d-92cedb45b030)
+![image](https://github.com/SalyDgn/weather-app/assets/86668140/42c0e604-79ed-4ca9-ba28-76f4563eee32)
+
 
 
